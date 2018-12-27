@@ -1,6 +1,5 @@
-import React, {Suspense} from 'react'
+import React, {useState} from 'react'
 import FindRepository from '../components/FindRepository'
-import { useState, useEffect } from 'react';
 import { Query } from "react-apollo";
 import {getRepoByNameAndAuthor} from '../api/repository'
 

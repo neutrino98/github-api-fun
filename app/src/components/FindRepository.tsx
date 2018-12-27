@@ -21,12 +21,12 @@ export default function FindRepository(props: IFindRepositoryProps) {
                     label="Name"
                     value={props.name}
                     onChange={props.onNameChange}
-                />
+                /><br/>
                 <TextField
                     label="Owner"
                     value={props.owner}
                     onChange={props.onOwnerChange}
-                />
+                /><br/><br/>
                 <Button onClick={props.onSubmit}> Submit</Button>
             </CardContent>
         </Card>
