@@ -4,7 +4,9 @@ import '../App.css'
 import Layout from '../containers/Layout'
 import { ApolloProvider } from "react-apollo"
 import ApolloClient from "apollo-boost"
-import {Route, Switch, Redirect} from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
+import LandingPage from "../containers/LandingPage"
+
 
 function App() {
   const client = new ApolloClient({
@@ -14,7 +16,9 @@ function App() {
   return (
       <ApolloProvider client={client}>
           <Layout>
-            <h1>Hello, world</h1>
+              <Switch>
+                  <Route component={LandingPage} path={'/'}/>
+              </Switch>
           </Layout>
       </ApolloProvider>
   )
