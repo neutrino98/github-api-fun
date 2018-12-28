@@ -1,7 +1,8 @@
 import gql from "graphql-tag";
+import {Repo} from "../types/Repo";
 
 
-export function getRepoByNameAndAuthor(name: String, owner: String) {
+export function getRepoByNameAndAuthor(name: String, owner: String): Repo {
     return (
         gql`
             query { 
@@ -17,11 +18,7 @@ export function getRepoByNameAndAuthor(name: String, owner: String) {
                 issues {
                   totalCount
                 }
-                languages(last: 3) {
-                  nodes {
-                    id 
-                    name
-                  }
+               
                 }
               }
             }

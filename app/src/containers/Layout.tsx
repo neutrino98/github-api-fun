@@ -1,15 +1,15 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
 
 interface ILayoutProps {
-    children: any
+  children: any;
 }
 
 export default function Layout(props: ILayoutProps) {
-    return (
-        <div>
-            <Header/>
-            {props.children}
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      {props.children}
+    </div>
+  );
 }
