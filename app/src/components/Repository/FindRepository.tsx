@@ -13,9 +13,6 @@ interface IFindRepositoryProps {
 }
 
 export default function FindRepository(props: IFindRepositoryProps) {
-  console.log(typeof props.name);
-  console.log(name);
-
   return (
     <Card>
       <CardContent>

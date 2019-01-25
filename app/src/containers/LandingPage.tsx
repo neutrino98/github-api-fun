@@ -16,11 +16,21 @@ function LandingPage(props: ILandingPageProps) {
   const [repos, setRepos] = useState<Repo | null>(null);
 
   function onSubmitSearchRepos() {
-    props
-      .client({
+    props.client
+      .query({
         query: getRepoByNameAndAuthor(name, owner)
       })
-      .then((repos: Repo) => setRepos(repos))
+      // .then((response: any) => {
+      //   console.log(response.data.repository);
+      //   const repos: Repo = JSON.parse(response.data.repository);
+      //   console.log(repos);
+      // })
+      .then((repos: Repo) => {
+        console.log("data in then: ", repos);
+        setRepos(repos);
+        setName("");
+        setOwner("");
+      })
       .catch((e: any) => console.log(e));
   }
 
@@ -33,13 +43,13 @@ function LandingPage(props: ILandingPageProps) {
             onNameChange={e => setName(e.target.value)}
             owner={owner}
             onOwnerChange={e => setOwner(e.target.value)}
-            onSubmit={() => {}}
+            onSubmit={onSubmitSearchRepos}
           />
         </li>
         <li>2</li>
         <li>
           <Suspense fallback={LargeSpinner}>
-            <FoundedRepos repos={null} error={null} />
+            <FoundedRepos repos={repos} error={null} />
           </Suspense>
         </li>
         <li>4</li>

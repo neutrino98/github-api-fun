@@ -9,8 +9,7 @@ interface IFoundedReposProps {
 export default function FoundedRepos({ error, repos }: IFoundedReposProps) {
   return (
     <div>
-      {error && "Smt go wrong"}
-      {repos ? "Repo" : "No repo"}
+      <p />
     </div>
   );
 }

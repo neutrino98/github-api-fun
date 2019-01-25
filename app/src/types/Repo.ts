@@ -1,20 +1,21 @@
 //Todo generate type
 export interface Repo {
-    description: string,
-    url: string,
-    assignableUsers: AssignableUsers,
-    forks: Forks
-    issues: Issues,
+  description: string;
+  url: string;
+  assignableUsers: AssignableUsers;
+  forks: Forks;
+  issues: Issues;
+  name: String;
 }
 
 interface AssignableUsers {
-    totalCount: number
+  totalCount: number;
 }
 
 interface Forks {
-    totalCount: number
+  totalCount: number;
 }
 
 interface Issues {
-    totalCount: number
+  totalCount: number;
 }
